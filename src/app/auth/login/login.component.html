@@ -1,0 +1,76 @@
+<p class="text-xs-center">Log in</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group"
+    [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched}"
+    >
+        <label for="email">Email</label>
+        <input
+            type="text"
+            class="form-control underlined"
+            id="email"
+            placeholder="email"
+            formControlName="email"
+        >
+        <div class="form-help-text"
+        *ngIf="form.get('email').invalid && form.get('email').touched"
+        >
+            <span
+             class="form-help-text"
+             *ngIf="form.get('email')['errors']['required']"
+             >
+                email should't be empty
+            </span>
+            <span
+             class="form-help-text"
+             *ngIf="form.get('email')['errors']['email']"
+             >
+                email is not correct
+            </span>
+        </div>
+    </div>
+    <div class="form-group"
+    [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}"
+    >
+        <label for="password">Password</label>
+        <input
+            type="password"
+            class="form-control underlined"
+            id="password"
+            placeholder="password"
+            formControlName="password"
+        >
+        <div class="form-help-text"
+        *ngIf="form.get('password').invalid && form.get('password').touched"
+        >
+            <span
+             class="form-help-text"
+             *ngIf="form.get('password')['errors']['required']"
+             >
+                password should't be empty
+            </span>
+            <span
+             class="form-help-text"
+             *ngIf=" form.get('password')['errors']['minlength']"
+             >
+                password length should be more than 
+                {{ form.get('password')['errors']['minlength']['requiredLength'] }} 
+                now  
+                {{ form.get('password')['errors']['minlength']['actualLength']  }} 
+                symbols
+            </span>
+        </div>
+       
+    </div>
+    <div class="form-group">
+    <button 
+     type="submit"
+     class="btn btn-block btn-primary"
+     [disabled]='form.invalid'
+    >Войти</button>
+    </div>
+    <div class="form-group">
+                <p class="text-muted text-xs-center">
+                    Нет аккаунта? <a href="#">Зарегистрироваться!</a>
+                </p>
+    </div>
+</form>
