@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {UserService} from '../../shared/service/user.service';
 import {User} from '../../shared/models/user.models';
 import {Messages} from "../../shared/models/messages.models";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'apa-login',
@@ -16,6 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
       private userService: UserService,
+      private router: Router,
+      private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {

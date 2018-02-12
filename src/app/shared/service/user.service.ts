@@ -26,4 +26,13 @@ export class UserService {
                 return user;
             });
     }
+
+    createNewUser(user: User): Observable<User> {
+        const url = 'http://localhost:3000/';
+        return this.http.post(`${url}users`, user)
+            .map((response: Response) => {
+                const users = response.json();
+                return users;
+            });
+    }
 }
