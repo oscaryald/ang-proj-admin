@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserService } from "./shared/service/user.service";
 import { AuthService } from "./shared/service/auth.service";
+import {SystemModule} from "./system/system.module";
 
 
 
@@ -18,8 +19,8 @@ import { AuthService } from "./shared/service/auth.service";
     BrowserModule,
     HttpModule,
     AuthModule,
-    AppRoutingModule
-    
+    AppRoutingModule,
+    SystemModule
 
   ],
   providers: [UserService, AuthService],

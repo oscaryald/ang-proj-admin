@@ -25,6 +25,11 @@
                             >
                                 email is not correct
                             </span>
+                            <span class="form-help-text"
+                                  *ngIf="form.get('email')['errors']['forbiddenEmail']"
+                            >
+                                email is allready exist
+                            </span>
                         </div>
                     </div>
                     <div class="form-group"
