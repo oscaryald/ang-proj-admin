@@ -23,7 +23,7 @@ const routes: Routes = [
             {
                 path:'planing',
                 component: PlaningPageComponent
-            }
+            },
             {
                 path:'records',
                 component: RecordsPageComponent
@@ -36,4 +36,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class SystemRoutingModule(){}
+export class SystemRoutingModule{}

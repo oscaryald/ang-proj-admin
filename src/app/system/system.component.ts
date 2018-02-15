@@ -5,4 +5,4 @@ import {Component} from "@angular/core";
     selector: "apa-system",
     templateUrl: "./system.component.html"
 })
-export class SystemComponent(){}
+export class SystemComponent{}
