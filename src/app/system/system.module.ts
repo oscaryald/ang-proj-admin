@@ -14,6 +14,10 @@ import {DropdownDirectives} from "./shared/directives/dropdown.directive";
 import { BillCardComponent } from './bill-page/bill-card/bill-card.component';
 import { CurrencyCardComponent } from './bill-page/currency-card/currency-card.component';
 import {BillService} from "./shared/services/bill.service";
+import {MomentPipe} from "../shared/pipes/moment.pipe";
+import { AddEventComponent } from './records-page/add-event/add-event.component';
+import { AddComponentComponent } from './records-page/add-component/add-component.component';
+import { EditCategoryComponent } from './records-page/edit-category/edit-category.component';
 
 @NgModule({
     imports: [
@@ -33,8 +37,12 @@ import {BillService} from "./shared/services/bill.service";
         DropdownDirectives,
         BillCardComponent,
         CurrencyCardComponent,
+        MomentPipe,
+        AddEventComponent,
+        AddComponentComponent,
+        EditCategoryComponent
     ],
-    providers[BillService]
+    providers: [BillService]
 
 })
 export class SystemModule{}
