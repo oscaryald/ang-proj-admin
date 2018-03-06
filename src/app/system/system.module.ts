@@ -16,8 +16,9 @@ import { CurrencyCardComponent } from './bill-page/currency-card/currency-card.c
 import {BillService} from "./shared/services/bill.service";
 import {MomentPipe} from "../shared/pipes/moment.pipe";
 import { AddEventComponent } from './records-page/add-event/add-event.component';
-import { AddComponentComponent } from './records-page/add-component/add-component.component';
 import { EditCategoryComponent } from './records-page/edit-category/edit-category.component';
+import { AddCategoryComponent } from './records-page/add-category/add-category.component';
+import {CategoryService} from "./shared/services/category.service";
 
 @NgModule({
     imports: [
@@ -39,10 +40,10 @@ import { EditCategoryComponent } from './records-page/edit-category/edit-categor
         CurrencyCardComponent,
         MomentPipe,
         AddEventComponent,
-        AddComponentComponent,
-        EditCategoryComponent
+        EditCategoryComponent,
+        AddCategoryComponent
     ],
-    providers: [BillService]
+    providers: [BillService, CategoryService]
 
 })
 export class SystemModule{}
