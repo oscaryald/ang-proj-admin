@@ -4,8 +4,10 @@
       Страница записей <span class="sparkline bar"></span>
     </h3>
   </div>
-
-  <section class="section">
+  <section class="section text-center" *ngIf="!isLoaded">
+    Loading...
+  </section>
+  <section class="section" *ngIf="isLoaded">
     <div class="row">
       <div class="col-md-6">
         <apa-add-event></apa-add-event>
@@ -16,7 +18,9 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-        <apa-edit-category></apa-edit-category>
+        <apa-edit-category [categories]="categories"
+                           (onCategoryEdit)="categoryWasEdit($event)"
+        ></apa-edit-category>
       </div>
     </div>
   </section>
