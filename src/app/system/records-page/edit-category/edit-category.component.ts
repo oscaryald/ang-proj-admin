@@ -1,15 +1,16 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {NgForm} from "@angular/forms";
 import {Category} from "../../shared/models/category.model";
 import {CategoryService} from "../../shared/services/category.service";
 import {Messages} from "../../../shared/models/messages.models";
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'apa-edit-category',
   templateUrl: './edit-category.component.html',
   styleUrls: ['./edit-category.component.scss']
 })
-export class EditCategoryComponent implements OnInit {
+export class EditCategoryComponent implements OnInit, OnDestroy {
 
   @Input() categories: Category[] = [];
   @Output() onCategoryEdit = new EventEmitter<Category>();
@@ -17,12 +18,12 @@ export class EditCategoryComponent implements OnInit {
   currentCategoryId: number = 1;
   currentCategory: Category;
   message: Messages;
-
+    sub1: Subscription;
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.onCategoryChange();
-    this.message = new Messages('success', '')
+    this.message = new Messages('success', '');
   }
 
   onCategoryChange(){
@@ -32,7 +33,7 @@ export class EditCategoryComponent implements OnInit {
 
   onSubmit(form: NgForm){
       let {name, capacity} = form.value;
-      if(capacity < 0) capacity *= -1;
+      if (capacity < 0) capacity *= -1;
 
       const category: Category = new Category(name, capacity, +this.currentCategoryId)
 
@@ -42,14 +43,11 @@ export class EditCategoryComponent implements OnInit {
             this.onCategoryEdit.emit(category);
             this.message.text = "category is succesfully edited";
             setTimeout( () => this.message.text = '', 5000)
-          })
+          });
   }
 
-
-
-  // onCategoryEdit(category){
-  //
-  //
-  // }
+    ngOnDestroy(){
+        if(this.sub1) this.sub1.unsubscribe();
+    }
 
 }

@@ -19,6 +19,7 @@ import { AddEventComponent } from './records-page/add-event/add-event.component'
 import { EditCategoryComponent } from './records-page/edit-category/edit-category.component';
 import { AddCategoryComponent } from './records-page/add-category/add-category.component';
 import {CategoryService} from "./shared/services/category.service";
+import {EventsService} from './shared/services/events.service';
 
 @NgModule({
     imports: [
@@ -43,7 +44,7 @@ import {CategoryService} from "./shared/services/category.service";
         EditCategoryComponent,
         AddCategoryComponent
     ],
-    providers: [BillService, CategoryService]
+    providers: [BillService, CategoryService, EventsService]
 
 })
 export class SystemModule{}
