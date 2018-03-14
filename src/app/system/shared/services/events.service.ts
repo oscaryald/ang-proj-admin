@@ -13,4 +13,8 @@ export class EventsService extends BaseApi{
     addEvent(event: APAEvent): Observable<APAEvent>{
         return this.post('events', event)
     }
+
+    getEvents(): Observable<APAEvent[]>{
+        return this.get('events');
+    }
 }
