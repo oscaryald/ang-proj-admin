@@ -13,22 +13,37 @@ export class HistoryEventsComponent implements OnInit {
   @Input() categories: Category[] = [];
   @Input() events: APAEvent[] = [];
 
+  searchValue: string = '';
+  searchPlaceholder: string = 'Amount';
+  searhField: string = 'amount';
   constructor() { }
 
 
 
   ngOnInit() {
-    this.events.forEach((e) => {
-      e.catName = this.categories.find(c => c.id === e.category).name;
-    })
+    this.events.forEach((ev) => {
+        ev.catName = this.categories.find(c => c.id === ev.category).name;
+    });
+
   }
 
-    getEventClass(e: APAEvent){
+  getEventClass(e: APAEvent){
       return{
         'label': true,
-          'label-danger': e.type === 'outcome'
+          'label-danger': e.type === 'outcome',
           'label-success': e.type === 'income'
       }
+  }
+
+  changeCriteria(field: string){
+    const namesMap = {
+      amount:'Amount',
+      date:'Date',
+      category:'Category',
+      type:'Type'
     }
+    this.searchPlaceholder = namesMap[field];
+    this.searhField = field;
+  }
 
 }
