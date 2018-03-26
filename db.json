@@ -32,10 +32,16 @@
     },
     {
       "id": 7
+    },
+    {
+      "email": "test1@gmail.com",
+      "password": "12345678",
+      "name": "Alex",
+      "id": 8
     }
   ],
   "bill": {
-    "value": 2150
+    "value": 1150
   },
   "categories": [
     {
@@ -67,6 +73,11 @@
       "name": "test11",
       "capacity": 1,
       "id": 6
+    },
+    {
+      "name": "car",
+      "capacity": 100,
+      "id": 7
     }
   ],
   "events": [
@@ -189,6 +200,14 @@
       "date": "14.03.2018 12:41:03",
       "description": "test",
       "id": 15
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 7,
+      "date": "16.03.2018 14:31:51",
+      "description": "test descr",
+      "id": 16
     }
   ]
 }
