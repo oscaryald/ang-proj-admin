@@ -41,7 +41,7 @@
     }
   ],
   "bill": {
-    "value": 1150
+    "value": 1050
   },
   "categories": [
     {
@@ -78,6 +78,11 @@
       "name": "car",
       "capacity": 100,
       "id": 7
+    },
+    {
+      "name": "Cars",
+      "capacity": 5000,
+      "id": 8
     }
   ],
   "events": [
@@ -86,7 +91,7 @@
       "type": "income",
       "amount": 1250,
       "category": 2,
-      "date": "12.06.2017 19:49:02",
+      "date": "12.06.2018 19:49:02",
       "description": "Подарили еду в гостях"
     },
     {
@@ -94,14 +99,14 @@
       "type": "outcome",
       "amount": 1300,
       "category": 1,
-      "date": "13.06.2017 19:49:02",
+      "date": "13.06.2018 19:49:02",
       "description": "Купил посудомоечную машину"
     },
     {
       "type": "income",
       "amount": 1480,
       "category": 2,
-      "date": "17.06.2017 14:00:48",
+      "date": "17.06.2018 14:00:48",
       "id": 3,
       "description": "Поход в окей с баллами. Бесплатная еда"
     },
@@ -109,7 +114,7 @@
       "type": "outcome",
       "amount": 2470,
       "category": 2,
-      "date": "17.06.2017 14:00:58",
+      "date": "17.06.2018 14:00:58",
       "id": 4,
       "description": "Закупка на неделю"
     },
@@ -117,7 +122,7 @@
       "type": "outcome",
       "amount": 4000,
       "category": 3,
-      "date": "10.06.2017 14:01:58",
+      "date": "10.06.2018 14:01:58",
       "id": 5,
       "description": "Заправка + проход ТО"
     },
@@ -208,6 +213,22 @@
       "date": "16.03.2018 14:31:51",
       "description": "test descr",
       "id": 16
+    },
+    {
+      "type": "outcome",
+      "amount": 1100,
+      "category": 1,
+      "date": "27.03.2018 12:47:29",
+      "description": "test cat",
+      "id": 17
+    },
+    {
+      "type": "income",
+      "amount": 1000,
+      "category": 8,
+      "date": "27.03.2018 17:48:25",
+      "description": "хочу еще ",
+      "id": 18
     }
   ]
 }

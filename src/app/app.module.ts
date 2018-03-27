@@ -8,25 +8,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserService } from "./shared/service/user.service";
 import { AuthService } from "./shared/service/auth.service";
-import {SystemModule} from "./system/system.module";
-
-
+import {AuthGuard} from './shared/service/auth.guard';
+import {NotFoundComponent} from './shared/components/not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+      NotFoundComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     AuthModule,
     AppRoutingModule,
-    SystemModule,
     BrowserAnimationsModule,
-
   ],
-  providers: [UserService, AuthService],
+  providers: [UserService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

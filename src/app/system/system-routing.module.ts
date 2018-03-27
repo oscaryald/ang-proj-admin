@@ -7,11 +7,13 @@ import {HistoryPageComponent} from "./history-page/history-page.component";
 import {HistoryDetailComponent} from "./history-page/history-detail/history-detail.component";
 import {PlaningPageComponent} from "./planing-page/planing-page.component";
 import {RecordsPageComponent} from "./records-page/records-page.component";
+import {AuthGuard} from '../shared/service/auth.guard';
 
 const routes: Routes = [
     {
-        path: 'system',
+        path: '',
         component: SystemComponent,
+        canActivate:[AuthGuard],
         children: [
             {
                 path:'bill',

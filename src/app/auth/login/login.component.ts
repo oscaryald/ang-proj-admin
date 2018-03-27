@@ -7,11 +7,13 @@ import {User} from '../../shared/models/user.models';
 import {Messages} from "../../shared/models/messages.models";
 
 import {AuthService} from "../../shared/service/auth.service";
+import {fadeStateTrigger} from '../../shared/animations/fade.animation';
 
 @Component({
   selector: 'apa-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+    animations:[fadeStateTrigger]
 })
 export class LoginComponent implements OnInit {
 
@@ -40,6 +42,12 @@ export class LoginComponent implements OnInit {
                       text: 'now you can enter to the admin',
                       type: 'success'
                   });
+              }else if(params['accessDenied']){
+                  this.showMessage({
+                      text:'You must to login',
+                      type:'warning'
+                  })
+
               }
           });
   }

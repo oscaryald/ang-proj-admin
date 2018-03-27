@@ -13,7 +13,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     FormsModule, 
     ReactiveFormsModule,
       NgxChartsModule,
-  ]
+  ],
 })
 export class SharedModule{
 
